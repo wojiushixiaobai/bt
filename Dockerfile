@@ -9,7 +9,7 @@ COPY Readme.txt /www/Readme.txt
 
 RUN set -ex \
     && apt-get update \
-    && apt-get -y install wget curl zip unzip openssh-client python-pip build-essential libtool libpcre3 libpcre3-dev zlib1g-dev openssl libzip-dev \
+    && apt-get -y install wget curl zip unzip openssh-client python-pip build-essential libtool libpcre3 libpcre3-dev zlib1g-dev openssl libzip-dev cmake libncurses5-dev \
     && chmod +x /bin/entrypoint.sh \
     && bash /tmp/install-ubuntu_6.0.sh \
     && rm -rf /tmp/install-ubuntu_6.0.sh \
