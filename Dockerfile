@@ -9,7 +9,7 @@ COPY Readme.txt /www/Readme.txt
 
 RUN set -ex \
     && apt-get update \
-    && apt-get -y install wget curl zip unzip openssh-client python-pip \
+    && apt-get -y install wget curl zip unzip openssh-client python-pip build-essential \
     && chmod +x /bin/entrypoint.sh \
     && bash /tmp/install-ubuntu_6.0.sh \
     && rm -rf /tmp/install-ubuntu_6.0.sh \
@@ -17,8 +17,6 @@ RUN set -ex \
     && apt-get -y autoremove \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf ~/.cache/pip
-
-VOLUME /www
 
 EXPOSE 20 21 80 443 888 8888
 ENTRYPOINT ["entrypoint.sh"]
